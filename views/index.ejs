@@ -1,0 +1,65 @@
+<!DOCTYPE><html><head>
+
+	<title>Xirsys XSDK: WebRTC Example</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/video-call.css"></link>
+	<script src="/javascripts/xirsys_connect.js"></script>
+	<script src="/javascripts/lib/xirsys.core.js"></script>
+	<script src="/javascripts/lib/xirsys.signal.js"></script>
+	<script src="/javascripts/lib/xirsys.api.js"></script>
+	<script src="/javascripts/lib/xirsys.p2p.adapter.js"></script>
+	<script src="/javascripts/lib/xirsys.p2p.js"></script>
+
+	<script src="/javascripts/webrtc.js"></script>
+
+</head><body>
+
+	<div id="xsdk-video-call">
+
+		<section class="major-box">
+			<h2>Remote video</h2>
+			<video autoplay="autoplay" id="remote-video"></video>
+			<input type="image" src="/images/full-screen.png" id="remote-full-screen" alt="Go full screen" title="Go full screen" height="20" width="20">
+		</section>
+
+		<section class="minor-box">
+			<h2>Local video</h2>
+			<video autoplay="autoplay" id="local-video" muted="true"></video>
+			<input type="image" src="/images/full-screen.png" id="local-full-screen" alt="Go full screen" title="Go full screen" height="20" width="20">
+		</section>
+
+		<section class="vertical-bar">
+			<h1>Xirsys XSDK: WebRTC Example</h1>
+			<div class="box">
+				<strong>Your username:</strong> <span id="username-label">[Not logged in]</span> <button id="log-out" style="visibility:hidden">Log out</button>
+			</div>
+			<div id="peers">
+				<h2>Peers:</h2>
+				<button id="call-peer">Call</button><button id="hang-up">Hang up</button><br><br>
+				<div>
+					<input type="radio" name="peer" value="__all__" checked="checked"/>
+					[All peers]
+				</div>
+			</div>
+		</section>
+
+		<section class="horizontal-bar">
+			<div id="messages">
+				<h2>Conversation thread:</h2>
+			</div>
+			<form id="sendMessage" class="message">
+				New message: <input type="text" id="message" />
+				<button type="submit">Send</button>
+			</form>
+		</section>
+
+		<section class="cover">
+			<form id="login">
+				<h2>Username:</h2>
+				<input type="text" id="username" placeholder="enter a username" />
+				<button id="login-btn" type="submit">Connect</button>
+			</form>
+		</section>
+
+	</div>
+
+</body></html>
